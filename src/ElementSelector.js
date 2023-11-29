@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios'
 
 export default function ElementSelector() {
   const [buttonState, setButtonState] = useState(true);
@@ -13,4 +14,20 @@ export default function ElementSelector() {
     </select>
     <input type='submit' data-testid='submit-button' disabled={buttonState} onClick={() => {console.log('Clicked!')}}></input>
     </div>)
+}
+
+
+export function ElementResultDisplay() {
+  const [elementResult, setElementResult] = useState('');
+
+  const response =  axios.get(`http://localhost:3001/data/H`);
+  console.log(response);
+
+
+  return (
+    <div>
+      <p data-testid='elementResult'>Helium</p>
+    </div>
+  )
+
 }

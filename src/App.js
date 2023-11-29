@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import ElementSelector from './ElementSelector.js'
+import { ElementResultDisplay } from './ElementSelector.js'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <ElementSelector />
+        <ElementResultDisplay />
       </header>
     </div>
   );
