@@ -1,12 +1,16 @@
+import { useState } from 'react';
+
 export default function ElementSelector() {
+  const [buttonState, setButtonState] = useState(true);
+
     return (
     <div>
-    <label for='element'>Pick an elemet: </label>
-    <select name='element' id='element'>
+    <label for='element'>Pick an element: </label>
+    <select name='element' id='element' data-testid='elementSelector' onChange={() => setButtonState(false)}>
       <option value=''>--Please choose an option--</option>
-      <option value='Hydrogen'>Hydrogen</option>
-      <option value='Helium'>Helium</option>
+      <option value='H'>Hydrogen</option>
+      <option value='He'>Helium</option>
     </select>
-    <input type='submit'></input>
+    <input type='submit' disabled={buttonState}></input>
     </div>)
 }
