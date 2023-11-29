@@ -11,6 +11,6 @@ export default function ElementSelector() {
       <option value='H'>Hydrogen</option>
       <option value='He'>Helium</option>
     </select>
-    <input type='submit' disabled={buttonState}></input>
+    <input type='submit' data-testid='submit-button' disabled={buttonState} onClick={() => {console.log('Clicked!')}}></input>
     </div>)
 }
